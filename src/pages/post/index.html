@@ -4,34 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/displays.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+    <link rel="stylesheet" href="./index.css">
     <title>Living</title>
 </head>
 <body>
     <header class="header">
-        <nav class="header_nav">
-            <div class="header_logo">
-                <img src="../home/assets/Rectangle 4.svg" alt="">
+        <nav class="container header_nav justify_between flex_row align_center">
+            <div class="header_logo flex_row">
+                <img class="header_img" src="../home/assets/Rectangle 4.svg" alt="">
                 <h1 class="header_h1">Living</h1>
             </div>
             <button class="header_btn">Home</button>
         </nav>
         <section class="post_title">
-            <div class="post_title_div">
+            <div class="post_title_div flex_col container">
                 <h2 class="header_h2">Cuidados para manter com plantas dentro de apartamentos</h2>
                 <p class="header_p">Invite as many collaborators as youd like. They can register as team members or join as guests – no registration required.</p>
             </div>
         </section>
     </header>
-    <main class="main">
+    <main class="main container">
         <section class="section-1">
-            <img class="post_img" src="../home/assets/Rectangle 2.svg" alt="">
-            <p class="post_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+            <img class="post_img" src="../home/assets/Rectangle 1.svg" alt="">
+            <p class="post_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <br>
+            <p class="post_description">it is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>  
+            <br>
+            <p class="post_description">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
         </section>
-        <section class="section-2">
+        <section class="filter_section flex_row">
             <button class="filter_btn">Todos</button>
             <button class="filter_btn">Pintura</button>
             <button class="filter_btn">Decoração</button>
@@ -43,11 +47,17 @@
         </section>
     </main>
     <footer class="footer">
-        <div class="footer_div">
-            <img class="footer_img" src="../home/assets/Rectangle 4.svg" alt="">
-            <h2 class="footer_h2"></h2>
+        <div class="footer_div_full flex_row container align_center justify_between">
+            <div class="footer_div flex_row align_center">
+                <img class="footer_img" src="../home/assets/Rectangle 4.svg" alt="">
+                <h2 class="footer_h2">Living</h2>
+            </div>
+            <div class="footer_div-2">
+                <p class="footer_p">The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
+            </div>
+            <button class="footer_btn">Voltar para o topo</button>
         </div>
-        <button class="footer_btn">Voltar para o topo</button>
     </footer>
 </body>
+<script type="module" src="./index.js"></script>
 </html>
