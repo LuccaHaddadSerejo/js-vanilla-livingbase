@@ -19,3 +19,8 @@
   --font-size-3: 1.25rem;
   --font-size-4: 1rem;
 }
+
+.container{
+  max-width: 1700px;
+  margin: 0 auto;
+}
