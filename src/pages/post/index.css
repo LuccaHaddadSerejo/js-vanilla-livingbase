@@ -1,1 +1,172 @@
-/* Desenvolva seu estilo aqui */
+.header{
+    
+}
+
+.header_nav{
+    margin-top: 22px;
+    height: 98px;
+}
+
+.header_logo{
+    gap: 16px;
+}
+
+.header_img{
+}
+
+.header_h1{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    color: #212529;
+}
+
+.header_btn{
+    height: 38px;
+    padding: 0 22px;
+    background-color: #F1F3F5;
+    border: 1px solid #F1F3F5;
+    border-radius: 32px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #495057;
+    cursor: pointer;
+}
+
+.post_title{
+    width: 100%;
+    background-color: #F1F3F5;
+    height: 336px;
+}
+
+.post_title_div{
+    padding: 80px 0;
+    gap: 32px;
+}
+
+.header_h2{
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 150%;
+    color: #212529;
+}
+
+.header_p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #495057;
+}
+
+.main{
+} 
+
+.section-1{
+
+}
+
+.post_img{
+    margin: 53px 0;
+    width: 100%;
+}
+
+.post_description{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #495057;
+}
+
+.filter_section{
+    gap: 20px;
+    height: 70px;
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 44px;
+    margin-bottom: 30px;
+}
+
+.filter_btn{
+    height: 38px;
+    width: 100%;
+    min-width: 11.1%;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #495057;
+    background-color: #F1F3F5;
+    border: 1px solid #F1F3F5;
+    border-radius: 32px;
+    cursor: pointer;
+}
+
+.filter_btn:hover{
+    color: #F8F9FA;
+    background: #087F5B;
+    border-color: #087F5B;
+}
+
+.filter_btn:focus{
+    color: #F8F9FA;
+    background: #087F5B;
+    border-color: #087F5B;
+}
+
+.filter_btn:active{
+    color: #F8F9FA;
+    background: #087F5B;
+    border-color: #087F5B;
+}
+
+.footer{
+    width: 100%;
+    height: 255px;
+    background-color: #212529;
+}
+
+.footer_div_full{
+}
+
+.footer_div{
+    gap: 16px;
+    margin-top: 100px;
+}
+
+.footer_img{
+}
+
+.footer_h2{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    color: #F8F9FA;
+}
+
+.footer_div-2{
+    max-width: 600px;
+    margin-top: 100px;
+    position: relative;
+    right: 233px;
+}
+
+.footer_p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #808387;
+}
+
+.footer_btn{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #F1F3F5;
+    border: 1px solid #495057;
+    border-radius: 32px;
+    background-color: #495057;
+    width: 15%;
+    height: 38px;
+    margin-top: 100px;
+    cursor: pointer;
+}

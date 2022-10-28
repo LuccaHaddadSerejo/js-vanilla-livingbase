@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+
 }
 
 :root {
@@ -22,6 +23,6 @@
 }
 
 .container{
-  max-width: 1500px;
+  max-width: 1300px;
   margin: 0 auto;
 }

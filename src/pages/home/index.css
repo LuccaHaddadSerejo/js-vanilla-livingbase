@@ -86,6 +86,24 @@
     cursor: pointer;
 }
 
+.filter_btn:hover{
+    color: #F8F9FA;
+    background: #087F5B;
+    border-color: #087F5B;
+}
+
+.filter_btn:focus{
+    color: #F8F9FA;
+    background: #087F5B;
+    border-color: #087F5B;
+}
+
+.filter_btn:active{
+    color: #F8F9FA;
+    background: #087F5B;
+    border-color: #087F5B;
+}
+
 .posts_section{
     width: 100%;
 }
