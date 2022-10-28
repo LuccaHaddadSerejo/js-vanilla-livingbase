@@ -86,35 +86,17 @@
     cursor: pointer;
 }
 
-.filter_btn:hover{
-    color: #F8F9FA;
-    background: #087F5B;
-    border-color: #087F5B;
-}
-
-.filter_btn:focus{
-    color: #F8F9FA;
-    background: #087F5B;
-    border-color: #087F5B;
-}
-
-.filter_btn:active{
-    color: #F8F9FA;
-    background: #087F5B;
-    border-color: #087F5B;
-}
-
 .posts_section{
     width: 100%;
 }
 
 .list_full{
-    gap: 60px;
+    gap: 26px;
     margin-bottom: 50px;
 }
 
 .post{
-    max-width: 48%;
+    max-width: 49%;
     gap: 25px;
     list-style: none;
     width: 100%;
