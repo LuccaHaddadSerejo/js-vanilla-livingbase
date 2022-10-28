@@ -1,4 +1,21 @@
 import {getPostById, getPosts} from "../../scripts/requisitions.js";
+import { getLocalItem } from "../../scripts/storage.js";
+
+
+function checkCategory(btn){
+    if(getLocalItem('@category') == btn.innerText){
+        btn.click()
+        localStorage.setItem('@category', JSON.stringify(""))
+    }else{ 
+    }    
+}
+
+async function getApiData(num){
+    const request = await getPosts(num)
+    const news = request.news
+    renderPost(news) 
+}
+
 
 async function renderButtons(arr, num){
     const request = await getPosts(num)
@@ -16,19 +33,26 @@ async function renderButtons(arr, num){
                 const filteredArr = []
                 if(elt.category == button.innerText){
                     filteredArr.push(elt)
-                    renderPost(filteredArr)
+                    localStorage.setItem("arrCategory", JSON.stringify(filteredArr))
+                    renderPost(getLocalItem("arrCategory"))
                 }else if(button.innerText == "Todos"){
                     filteredArr.push(elt)
-                    renderPost(filteredArr)
+                    localStorage.setItem("arrCategory", JSON.stringify(filteredArr))
+                    renderPost(getLocalItem("arrCategory"))
                 }
             })
         })
+        if(getLocalItem('@category') != ""){
+            checkCategory(button)
+        }else{
+        }
+       
         filterSection.append(button)
     })
     return filterSection
 }
 
-renderButtons(['Todos', 'Pintura', 'Decoração', 'Organização', 'Limpeza', 'Segurança', 'Reforma', 'Aromas'], 0)
+renderButtons(["Todos", "Pintura", "Decoração", "Organização", "Limpeza", "Segurança", 'Reforma', 'Aromas'], 0)
 
 async function renderPost(arr){
     const list = document.querySelector('.list_full')
@@ -71,10 +95,12 @@ async function renderPost(arr){
     return list
 }
 
-async function getApiData(num){
-    const request = await getPosts(num)
-    const news = request.news
-    renderPost(news) 
+function checkData(num){
+    if(getLocalItem('@category') == ""){
+        getApiData(num)
+    }else{
+    }
 }
 
-getApiData(0)
+checkData(0)
+
