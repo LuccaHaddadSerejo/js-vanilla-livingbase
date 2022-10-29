@@ -2,6 +2,8 @@ import {getPostById, getPosts} from "../../scripts/requisitions.js";
 import { getLocalItem } from "../../scripts/storage.js";
 
 
+checkData(0)
+
 function checkCategory(btn){
     if(getLocalItem('@category') == btn.innerText){
         btn.click()
@@ -10,16 +12,27 @@ function checkCategory(btn){
     }    
 }
 
+async function getAllPages(){
+    const requestOne = await getPosts(0)
+    const pageOne = requestOne.news
+    const requestTwo = await getPosts(1)
+    const pageTwo = requestTwo.news
+    const requestThree = await getPosts(2)
+    const pageThree = requestThree.news
+    const fullArr = [...pageOne,...pageTwo,...pageThree]
+    localStorage.setItem('fullArr', JSON.stringify(fullArr))
+}
+
+getAllPages()
+
 async function getApiData(num){
     const request = await getPosts(num)
     const news = request.news
     renderPost(news) 
 }
 
-
-async function renderButtons(arr, num){
-    const request = await getPosts(num)
-    const news = request.news
+async function renderButtons(arr){
+    const news = getLocalItem("fullArr")
     const list = document.querySelector('.list_full')
     const filterSection = document.querySelector('.filter_section')
     arr.forEach(btn => {    
@@ -52,7 +65,7 @@ async function renderButtons(arr, num){
     return filterSection
 }
 
-renderButtons(["Todos", "Pintura", "Decoração", "Organização", "Limpeza", "Segurança", 'Reforma', 'Aromas'], 1)
+renderButtons(["Todos", "Pintura", "Decoração", "Organização", "Limpeza", "Segurança", 'Reforma', 'Aromas'])
 
 async function renderPost(arr){
     const list = document.querySelector('.list_full')
@@ -102,5 +115,8 @@ function checkData(num){
     }
 }
 
-checkData(1)
+
+
+
+
 

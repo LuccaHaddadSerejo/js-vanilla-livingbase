@@ -27,7 +27,7 @@ async function renderPage(){
 
 renderPage()
 
-async function renderButtons(arr, num){
+async function renderButtons(arr){
     const filterSection = document.querySelector('.filter_section')
     arr.forEach(btn => {    
         const button = document.createElement('button')
