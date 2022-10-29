@@ -52,7 +52,7 @@ async function renderButtons(arr, num){
     return filterSection
 }
 
-renderButtons(["Todos", "Pintura", "Decoração", "Organização", "Limpeza", "Segurança", 'Reforma', 'Aromas'], 0)
+renderButtons(["Todos", "Pintura", "Decoração", "Organização", "Limpeza", "Segurança", 'Reforma', 'Aromas'], 1)
 
 async function renderPost(arr){
     const list = document.querySelector('.list_full')
@@ -102,5 +102,5 @@ function checkData(num){
     }
 }
 
-checkData(0)
+checkData(1)
 
