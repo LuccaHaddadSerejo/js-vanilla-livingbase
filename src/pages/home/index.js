@@ -91,7 +91,7 @@ async function renderPost(arr){
 
     arr.forEach(notice => {
         const postFull = document.createElement('li')
-        postFull.classList = 'post'
+        postFull.classList = 'post postAnimation'
     
         const postDivOne = document.createElement('div')
         postDivOne.classList = 'post_img_div'
@@ -133,7 +133,7 @@ async function renderFilter(arr){
 
     arr.forEach(notice => {
         const postFull = document.createElement('li')
-        postFull.classList = 'post'
+        postFull.classList = 'post postAnimation-2'
     
         const postDivOne = document.createElement('div')
         postDivOne.classList = 'post_img_div'
