@@ -43,7 +43,7 @@ async function renderButtons(arr){
     return filterSection
 }
 
-renderButtons(['Todos', 'Pintura', 'Decoração', 'Organização', 'Limpeza', 'Segurança', 'Reforma', 'Aromas'], 0)
+renderButtons(['Todos', 'Pintura', 'Decoração', 'Organização', 'Limpeza', 'Segurança', 'Reforma', 'Aromas'])
 
 
 

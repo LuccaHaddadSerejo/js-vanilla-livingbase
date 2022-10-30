@@ -111,6 +111,7 @@
 .list_full{
     gap: 24px;
     margin-bottom: 50px;
+    position: relative;
 }
 
 .post{
@@ -170,16 +171,16 @@
     background-color: #212529;
 }
 
-.footer_div_full{
-}
+/* .footer_div_full{
+} */
 
 .footer_div{
     gap: 16px;
     margin-top: 100px;
 }
 
-.footer_img{
-}
+/* .footer_img{
+} */
 
 .footer_h2{
     font-weight: 700;
@@ -219,4 +220,9 @@
 .top{
     text-decoration: none;
     color: inherit;
+}
+
+.observe{
+    position: absolute;
+    bottom: 0px;
 }

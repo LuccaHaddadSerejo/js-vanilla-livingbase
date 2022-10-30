@@ -1,15 +1,15 @@
+import {observer} from "../../scripts/observer.js";
 import {getPostById, getPosts} from "../../scripts/requisitions.js";
 import { getLocalItem } from "../../scripts/storage.js";
 
 
 checkData(0)
 
+
 function checkCategory(btn){
     if(getLocalItem('@category') == btn.innerText){
         btn.click()
-        localStorage.setItem('@category', JSON.stringify(""))
-    }else{ 
-    }    
+    } 
 }
 
 async function getAllPages(){
@@ -39,35 +39,96 @@ async function renderButtons(arr){
         const button = document.createElement('button')
         button.classList = 'filter_btn'
         button.innerText = btn
+        if(button.innerText == "Todos"){
+            button.id = 'allBtn'
+        } 
         button.addEventListener('click', (event)=>{
             event.preventDefault()
             list.innerHTML = ''
             news.map(elt => {
                 const filteredArr = []
-                if(elt.category == button.innerText){
+                if(elt.category == button.innerText && button.innerText != "Todos"){
                     filteredArr.push(elt)
                     localStorage.setItem("filteredArr", JSON.stringify(filteredArr))
-                    renderPost(getLocalItem("filteredArr"))
-                }else if(button.innerText == "Todos"){
-                    filteredArr.push(elt)
-                    localStorage.setItem("filteredArr", JSON.stringify(filteredArr))
-                    renderPost(getLocalItem("filteredArr"))
+                    renderFilter(getLocalItem("filteredArr"))
                 }
             })
         })
+        
         if(getLocalItem('@category') != ""){
             checkCategory(button)
-        }else{
-        }
-       
+        }      
+
         filterSection.append(button)
     })
     return filterSection
 }
 
+
 renderButtons(["Todos", "Pintura", "Decoração", "Organização", "Limpeza", "Segurança", 'Reforma', 'Aromas'])
 
+
+async function filterAll(){
+    const btn = document.getElementById('allBtn')
+    btn.addEventListener('click', ()=>{
+        checkData(0)
+    })
+    if(getLocalItem('@category') != ""){
+        checkCategory(btn)
+    }      
+    localStorage.setItem('@category', JSON.stringify(""))
+}
+
+filterAll()
+
+
 async function renderPost(arr){
+    const list = document.querySelector('.list_full')
+
+    const divObserve = document.createElement('div')
+    divObserve.classList = 'observe'
+    observer.observe(divObserve)
+
+    arr.forEach(notice => {
+        const postFull = document.createElement('li')
+        postFull.classList = 'post'
+    
+        const postDivOne = document.createElement('div')
+        postDivOne.classList = 'post_img_div'
+
+        const postImg = document.createElement('img')
+        postImg.classList = 'post_img'
+        postImg.src = notice.image
+
+        const postDivTwo = document.createElement('div')
+        postDivTwo.classList = 'post_description flex_col'
+
+        const postH2 = document.createElement('h2')
+        postH2.classList = 'post_h2'
+        postH2.innerText = notice.title
+
+        const postP = document.createElement('p')
+        postP.classList = 'post_p'
+        postP.innerText = notice.description
+
+        const postLink = document.createElement('a')
+        postLink.classList = 'post_link'
+        postLink.innerText = 'Acessar conteúdo'
+        postLink.addEventListener('click', async ()=>{
+            localStorage.setItem('@noticeId', JSON.stringify(await getPostById(notice.id)))
+            window.location.replace('./src/pages/post/index.html')
+        })
+
+        postDivOne.append(postImg)
+        postDivTwo.append(postH2, postP, postLink)
+        postFull.append(postDivOne, postDivTwo)
+        list.append(postFull, divObserve)
+    });
+    return list
+}
+
+
+async function renderFilter(arr){
     const list = document.querySelector('.list_full')
 
     arr.forEach(notice => {
@@ -114,6 +175,8 @@ function checkData(num){
     }else{
     }
 }
+
+export{renderPost, getApiData}
 
 
 
