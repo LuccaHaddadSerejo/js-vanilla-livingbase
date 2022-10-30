@@ -46,12 +46,12 @@ async function renderButtons(arr){
                 const filteredArr = []
                 if(elt.category == button.innerText){
                     filteredArr.push(elt)
-                    localStorage.setItem("arrCategory", JSON.stringify(filteredArr))
-                    renderPost(getLocalItem("arrCategory"))
+                    localStorage.setItem("filteredArr", JSON.stringify(filteredArr))
+                    renderPost(getLocalItem("filteredArr"))
                 }else if(button.innerText == "Todos"){
                     filteredArr.push(elt)
-                    localStorage.setItem("arrCategory", JSON.stringify(filteredArr))
-                    renderPost(getLocalItem("arrCategory"))
+                    localStorage.setItem("filteredArr", JSON.stringify(filteredArr))
+                    renderPost(getLocalItem("filteredArr"))
                 }
             })
         })
