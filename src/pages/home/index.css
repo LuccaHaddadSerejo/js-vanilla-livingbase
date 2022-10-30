@@ -226,3 +226,22 @@
     position: absolute;
     bottom: 0px;
 }
+
+.postAnimation{
+    animation: slideUp ease 1000ms forwards;
+}
+
+.postAnimation-2{
+    animation: slideIn ease 1000ms forwards;
+}
+
+
+@keyframes slideUp{
+    0%   {transform: translateY(500px)}
+    100% {transform: translateY(0px)}
+}
+
+@keyframes slideIn{
+    0%   {transform: translateX(-500px)}
+    100% {transform: translateX(0px)}
+}
