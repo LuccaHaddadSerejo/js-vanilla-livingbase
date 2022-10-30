@@ -70,7 +70,8 @@ renderButtons(["Todos", "Pintura", "Decoração", "Organização", "Limpeza", "S
 
 async function filterAll(){
     const btn = document.getElementById('allBtn')
-    btn.addEventListener('click', ()=>{
+    btn.addEventListener('click', (event)=>{
+        event.preventDefault()
         checkData(0)
     })
     if(getLocalItem('@category') != ""){
