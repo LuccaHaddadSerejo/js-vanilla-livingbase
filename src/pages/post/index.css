@@ -1,6 +1,6 @@
-.header{
+/* .header{
     
-}
+} */
 
 .header_nav{
     margin-top: 22px;
@@ -11,8 +11,9 @@
     gap: 16px;
 }
 
+/* 
 .header_img{
-}
+} */
 
 .header_h1{
     font-weight: 700;
@@ -59,12 +60,12 @@
     color: #495057;
 }
 
-.main{
-} 
+/* .main{
+}  */
 
-.section-1{
+/* .section-1{
 
-}
+} */
 
 .post_img{
     margin: 53px 0;
@@ -91,7 +92,7 @@
 .filter_btn{
     height: 38px;
     width: 100%;
-    min-width: 11.1%;
+    min-width: 11%;
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
@@ -133,9 +134,9 @@
     gap: 16px;
     margin-top: 100px;
 }
-
+/* 
 .footer_img{
-}
+} */
 
 .footer_h2{
     font-weight: 700;
@@ -148,7 +149,7 @@
     max-width: 600px;
     margin-top: 100px;
     position: relative;
-    right: 150px;
+    right: 120px;
 }
 
 .footer_p{

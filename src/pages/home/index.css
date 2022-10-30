@@ -75,7 +75,7 @@
 .filter_btn{
     height: 38px;
     width: 100%;
-    min-width: 11.1%;
+    min-width: 11%;
     font-weight: 600;
     font-size: 16px;
     line-height: 150%;
@@ -109,8 +109,9 @@
 }
 
 .list_full{
-    gap: 26px;
+    gap: 24px;
     margin-bottom: 50px;
+    position: relative;
 }
 
 .post{
@@ -170,16 +171,16 @@
     background-color: #212529;
 }
 
-.footer_div_full{
-}
+/* .footer_div_full{
+} */
 
 .footer_div{
     gap: 16px;
     margin-top: 100px;
 }
 
-.footer_img{
-}
+/* .footer_img{
+} */
 
 .footer_h2{
     font-weight: 700;
@@ -192,7 +193,7 @@
     max-width: 600px;
     margin-top: 100px;
     position: relative;
-    right: 150px;
+    right: 120px;
 }
 
 .footer_p{
@@ -219,4 +220,9 @@
 .top{
     text-decoration: none;
     color: inherit;
+}
+
+.observe{
+    position: absolute;
+    bottom: 0px;
 }
