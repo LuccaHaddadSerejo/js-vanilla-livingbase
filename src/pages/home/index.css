@@ -228,20 +228,18 @@
 }
 
 .postAnimation{
-    animation: slideUp ease 1000ms forwards;
+    animation: slideUp ease 800ms forwards;
+    
 }
-
-.postAnimation-2{
-    animation: slideIn ease-in-out 300ms forwards;
-}
-
 
 @keyframes slideUp{
-    0%   {transform: translateY(1000px)}
-    100% {transform: translateY(0px)}
+    0%   {
+        transform: translateY(100px);
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }
 
-@keyframes slideIn{
-    0%   {transform: translateX(-1500px)}
-    100% {transform: translateX(0px)}
-}
