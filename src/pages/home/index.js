@@ -2,9 +2,7 @@ import {observer} from "../../scripts/observer.js";
 import {getPostById, getPosts} from "../../scripts/requisitions.js";
 import { getLocalItem } from "../../scripts/storage.js";
 
-
 checkData(0)
-
 
 function checkCategory(btn){
     if(getLocalItem('@category') == btn.innerText){
@@ -20,7 +18,7 @@ async function getAllPages(){
     const requestThree = await getPosts(2)
     const pageThree = requestThree.news
     const fullArr = [...pageOne,...pageTwo,...pageThree]
-    localStorage.setItem('fullArr', JSON.stringify(fullArr))
+    return localStorage.setItem('fullArr', JSON.stringify(fullArr))
 }
 
 getAllPages()
@@ -31,7 +29,7 @@ async function getApiData(num){
     renderPost(news) 
 }
 
-async function renderButtons(arr){
+function renderButtons(arr){
     const news = getLocalItem("fullArr")
     const list = document.querySelector('.list_full')
     const filterSection = document.querySelector('.filter_section')
@@ -41,47 +39,31 @@ async function renderButtons(arr){
         button.innerText = btn
         if(button.innerText == "Todos"){
             button.id = 'allBtn'
-        } 
-        button.addEventListener('click', (event)=>{
-            event.preventDefault()
-            list.innerHTML = ''
-            news.map(elt => {
-                const filteredArr = []
-                if(elt.category == button.innerText && button.innerText != "Todos"){
-                    filteredArr.push(elt)
-                    localStorage.setItem("filteredArr", JSON.stringify(filteredArr))
-                    renderFilter(getLocalItem("filteredArr"))
-                }
-            })
-        })
-        
+            button.addEventListener('click', (event)=>{
+                event.preventDefault()
+                localStorage.setItem('@category', JSON.stringify(""))
+                list.innerHTML = ''
+                const slicedArr = news.slice(0, 6)  
+                renderPost(slicedArr)  
+            })         
+        }else{
+            button.addEventListener('click', (event)=>{
+                event.preventDefault()
+                localStorage.setItem('@category', JSON.stringify(""))
+                list.innerHTML = ''   
+                const filteredArr = news.filter(elt => elt.category == btn)
+                renderFilter(filteredArr)  
+            })         
+        }
         if(getLocalItem('@category') != ""){
             checkCategory(button)
-        }      
-
-        filterSection.append(button)
-    })
+        }  
+        filterSection.append(button)  
+    })     
     return filterSection
 }
 
-
 renderButtons(["Todos", "Pintura", "Decoração", "Organização", "Limpeza", "Segurança", 'Reforma', 'Aromas'])
-
-
-async function filterAll(){
-    const btn = document.getElementById('allBtn')
-    btn.addEventListener('click', (event)=>{
-        event.preventDefault()
-        checkData(0)
-    })
-    if(getLocalItem('@category') != ""){
-        checkCategory(btn)
-    }      
-    localStorage.setItem('@category', JSON.stringify(""))
-}
-
-filterAll()
-
 
 async function renderPost(arr){
     const list = document.querySelector('.list_full')
@@ -178,9 +160,6 @@ function checkData(num){
 }
 
 export{renderPost, getApiData}
-
-
-
 
 
 

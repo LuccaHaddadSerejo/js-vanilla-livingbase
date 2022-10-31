@@ -1,7 +1,7 @@
 import { getPosts } from "./requisitions.js"
 import { renderPost} from "../pages/home/index.js"
 
-let page = 0
+let page = 1
 
 const renderNewPosts = async () => {
     const dados = await getPosts(page)
