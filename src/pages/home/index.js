@@ -116,7 +116,7 @@ async function renderFilter(arr){
 
     arr.forEach(notice => {
         const postFull = document.createElement('li')
-        postFull.classList = 'post postAnimation-2'
+        postFull.classList = 'post postAnimation'
     
         const postDivOne = document.createElement('div')
         postDivOne.classList = 'post_img_div'
